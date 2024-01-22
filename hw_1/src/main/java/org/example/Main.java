@@ -2,12 +2,14 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import static org.example.PersonSerialization.deserializeList;
 import static org.example.PersonSerialization.serializeList;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         // Создаем список объектов Person
         List<Person> persons = new ArrayList<>();
