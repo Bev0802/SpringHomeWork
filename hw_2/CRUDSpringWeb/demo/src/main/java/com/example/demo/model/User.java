@@ -47,4 +47,7 @@ public class User {
         return Objects.hash(id, firstName, lastName);
     }
 
+    public User orElse(Object o) {
+        return null;
+    }
 }

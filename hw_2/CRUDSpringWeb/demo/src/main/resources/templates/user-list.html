@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
 <div th:switch="${users}">
@@ -12,9 +13,9 @@
         <table>
             <thead>
             <tr>
-                <th>Id</th>
-                <th>First name</th>
-                <th>Last name</th>
+                <th data-sort-direction="asc">Id</th>
+                <th data-sort-direction="asc">First name</th>
+                <th data-sort-direction="asc">Last name</th>
             </tr>
             </thead>
             <tbody>
@@ -30,5 +31,6 @@
     </div>
     <p><a href="/user-create">Create user</a></p>
 </div>
+<script src="../static/scripts.js"></script>
 </body>
 </html>
