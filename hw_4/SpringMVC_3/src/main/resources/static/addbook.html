@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your CSS styles for the form here */
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #a6d1ea;
+            border-radius: 5px;
+            background-color: #9ebee1;
+            max-width: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4c82af;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4551a0;
+        }
+    </style>
+    <title>Добавление новой книги</title>
+</head>
+<body>
+<h1 style="text-align: center; color: #4554A0">Добавление новой книги</h1>
+<form action="library/addbook" method="post">
+    <input type="text" name="title" placeholder="Название книги">
+    <input type="text" name="author" placeholder="Автор">
+    <input type="submit" value="Добавить книгу">
+</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+    <style>
+        h1 {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #a29884;
+            text-align: left;
+            padding: 8px;
+        }
+        h1 {
+            background-color: #abd3da;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4c9baf;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .button:hover {
+            background-color: #4554a0;
+        }
+        a {
+            color: #4588a0;
+        }
+    </style>
+</head>
+<body>
+<p><a th:href="@{/library}" class="button">Вернуться к списку книг</a></p>
+<h1  style=color:#202d6c>О книге</h1>
+<table>
+        <h2>Наименование: <span th:text="${book.name}">Book Title</span></h2>
+        <h3>Автор: <span th:text="${book.author}">Author Name</span></h3>
+        <p>ID: <span th:text="${book.id}">1</span></p>
+
+
+</table>
+
+
+</body>
+</html>
