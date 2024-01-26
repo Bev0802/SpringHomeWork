@@ -71,5 +71,19 @@ public class BookController {
         return "editbook";
     }
 
+    @PostMapping("/editbook")
+    public String editBook(@ModelAttribute Book book, Model model) {
+        bookServes.editBook(book);
+        model.addAttribute("books", bookServes.getAllBooks());
+        return "redirect:/library";
+    }
+
+    @PostMapping("deleteBook/{id}")
+    public String deleteBook(@PathVariable Long id, Model model) {
+        bookServes.deleteBook(id);
+        model.addAttribute("books", bookServes.getAllBooks());
+        return "redirect:/library";
+    }
+
 
 }

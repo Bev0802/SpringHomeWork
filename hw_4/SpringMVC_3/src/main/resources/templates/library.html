@@ -79,13 +79,24 @@
         <th>Редактировать</th>
         <th>Удалить</th>
     </tr>
+    </tr>
     <tr th:each="book : ${books}">
         <td th:text="${book.id}">1</td>
         <td th:text="${book.name}">Book Title</td>
         <td th:text="${book.author}">Author Name</td>
-        <td><a th:href="@{/library/{id}(id=${book.id})}">Подробнее</a></td>
-        <td><a th:href="@{/library/editbook/{id}(id=${book.id})}">Редактировать</a></td>
-        <td><a th:href="@{/library/delete/{id}(id=${book.id})}">Удалить</a></td>
+        <td>
+            <form th:action="@{/library/{id}(id=${book.id})}" method="get">
+                <input type="submit" value="Подробнее" class="button">
+            </form>
+        </td>
+        <td>
+            <a th:href="@{/library/editbook/{id}(id=${book.id})}" class="button">Редактировать</a>
+        </td>
+        <td>
+            <form th:action="@{/library/deleteBook/{id}(id=${book.id})}" method="post">
+                <input type="submit" value="Удалить" class="button">
+            </form>
+        </td>
     </tr>
 </table>
 </body>

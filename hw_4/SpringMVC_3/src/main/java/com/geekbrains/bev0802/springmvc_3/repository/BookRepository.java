@@ -47,4 +47,8 @@ public class BookRepository {
         books.put(book.getId(), book);
         return book;
     }
+
+    public void deleteById (long id) {
+        books.remove(id);
+    }
 }

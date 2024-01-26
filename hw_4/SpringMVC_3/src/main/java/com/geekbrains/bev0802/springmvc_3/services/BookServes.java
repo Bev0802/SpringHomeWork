@@ -50,4 +50,12 @@ public class BookServes {
     public void addBook(Book book){
         bookRepository.save(book);
     }
+
+    public void editBook(Book book) {
+        bookRepository.save(book);
+    }
+
+    public void deleteBook(long id) {
+        bookRepository.deleteById(id);
+    }
 }
