@@ -84,7 +84,7 @@
         <td th:text="${book.name}">Book Title</td>
         <td th:text="${book.author}">Author Name</td>
         <td><a th:href="@{/library/{id}(id=${book.id})}">Подробнее</a></td>
-        <td><a th:href="@{/library/edit/{id}(id=${book.id})}">Редактировать</a></td>
+        <td><a th:href="@{/library/editbook/{id}(id=${book.id})}">Редактировать</a></td>
         <td><a th:href="@{/library/delete/{id}(id=${book.id})}">Удалить</a></td>
     </tr>
 </table>

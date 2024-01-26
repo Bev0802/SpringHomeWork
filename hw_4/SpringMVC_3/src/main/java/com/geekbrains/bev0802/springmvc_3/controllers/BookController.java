@@ -64,6 +64,12 @@ public class BookController {
         bookServes.addBook(book);
         model.addAttribute("books", bookServes.getAllBooks());
         return "redirect:/library";
-
     }
+    @GetMapping("/editbook/{id}")
+    public String showEditBookForm(@PathVariable Long id, Model model) {
+            model.addAttribute("book", bookServes.getBook(id));
+        return "editbook";
+    }
+
+
 }
