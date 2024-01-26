@@ -17,6 +17,7 @@
         }
         th {
             background-color: #abd3da;
+            text-align: center;
         }
 
         form {
@@ -63,6 +64,9 @@
         input[type="submit"]:hover {
             background-color: #4551a0;
         }
+        .button-column{
+            width: 150px;
+        }
     </style>
 </head>
 <body>
@@ -75,9 +79,9 @@
         <th>ID</th>
         <th>Название книги</th>
         <th>Автор</th>
-        <th>Детали</th>
-        <th>Редактировать</th>
-        <th>Удалить</th>
+        <th class="button-column">Детали</th>
+        <th class="button-column">Редактировать</th>
+        <th class="button-column">Удалить</th>
     </tr>
     </tr>
     <tr th:each="book : ${books}">
