@@ -43,9 +43,9 @@
 
 
 <form action="/library/editbook" method="post">
-    <input type="text" name="author" placeholder="Автор">
-    <input type="text" name="name" placeholder="Название">
-    <input type="hidden" name="id" value="<span th:text='${book.id}'>1</span>">
+    <input type="text" name="name" th:value="${book.name}" placeholder="Название">
+    <input type="text" name="author" th:value="${book.author}" placeholder="Автор">
+    <input type="hidden" name="id" th:value="${book.id}">
     <input type="submit" value="Сохранить изменения">
 </form>
 </body>

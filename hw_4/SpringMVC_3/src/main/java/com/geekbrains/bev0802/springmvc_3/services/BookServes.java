@@ -52,10 +52,15 @@ public class BookServes {
     }
 
     public void editBook(Book book) {
-        bookRepository.save(book);
+        bookRepository.editBook(book);
     }
-
+    /**
+     * Deletes a book by its ID.
+     *
+     * @param  id   the ID of the book to be deleted
+     */
     public void deleteBook(long id) {
         bookRepository.deleteById(id);
     }
+
 }

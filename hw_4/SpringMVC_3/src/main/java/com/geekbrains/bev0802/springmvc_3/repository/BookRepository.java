@@ -48,7 +48,26 @@ public class BookRepository {
         return book;
     }
 
+
+
     public void deleteById (long id) {
         books.remove(id);
+    }
+    /**
+     * Обновляет существующую книгу.
+     *
+     * @param book Объект книги для обновления
+     */
+    public void editBook(Book book) {
+        if (book != null && book.getId() != null) {
+            // Проверяем, существует ли книга с таким ID
+            Book existingBook = findById(book.getId());
+            if (existingBook != null) {
+                // Обновляем данные книги
+                existingBook.setName(book.getName());
+                existingBook.setAuthor(book.getAuthor());
+                save(existingBook);
+            }
+        }
     }
 }
