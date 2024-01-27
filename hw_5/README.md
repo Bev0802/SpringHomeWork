@@ -34,8 +34,16 @@
     NOT_STARTED, IN_PROGRESS, COMPLETED;
     }
 
----
+### Выполнила:
 
-### Задание со звездочкой:
+[Проэкт под названием: backlog](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_5/backlog)
+
+## Задание со звездочкой:
 
 Приложен к материалам семинара файл StrongHomeTask.txt
+
+### В процессе:
+
+разбираюсь со связыванием сущностей в таблицах.
+
+[Проэкт под названием: ProjectManager](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_5/ProjectManager)
