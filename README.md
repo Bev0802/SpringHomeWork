@@ -9,3 +9,5 @@
 [Урок 4. Spring MVC. Использование шаблонизатора Thymeleaf](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_4)
 
 [Урок 5. Spring Data для работы с базами данных](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_5)
+
+[Урок 6. Проектирование и реализация API для серверного приложения.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_6)
