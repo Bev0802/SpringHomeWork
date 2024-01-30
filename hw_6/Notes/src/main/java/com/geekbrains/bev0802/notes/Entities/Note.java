@@ -41,4 +41,16 @@ public class Note {
     private void onUpdate() {
         this.lastModifiedDate = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", creationDate=" + creationDate +
+                ", lastModifiedDate=" + lastModifiedDate +
+                // Не включаем свойство user, чтобы избежать циклической зависимости
+                '}';
+    }
 }

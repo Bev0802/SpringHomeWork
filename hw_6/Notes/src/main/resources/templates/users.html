@@ -31,7 +31,7 @@
                 <td th:text="${user.name}">Имя пользователя</td>
                 <td>
                     <a th:href="@{/users/{id}/notes(id=${user.id})}" class="button">Заметки</a>
-                    <a th:href="@{/users/{id}/edit(id=${user.id})}" class="button">Изменить</a>
+                    <a th:href="@{/users/{id}/update(id=${user.id})}" class="button">Изменить</a>
                     <form th:action="@{/users/{id}/delete(id=${user.id})}" method="post" style="display: inline-block;">
                         <input type="hidden" name="_method" value="delete" />
                         <button type="submit" class="button">Удалить</button>

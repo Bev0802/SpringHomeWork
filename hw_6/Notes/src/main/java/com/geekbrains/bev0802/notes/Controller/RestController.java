@@ -5,7 +5,6 @@ import com.geekbrains.bev0802.notes.servises.NoteService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +13,12 @@ import java.util.List;
 /**
  * Контроллер для обработки REST API запросов, связанных с заметками.
  */
-@RestController
+@org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-public class NoteRestController {
+public class RestController {
     private final NoteService noteService;
-    private final Logger logger = LoggerFactory.getLogger(NoteRestController.class);
+    private final Logger logger = LoggerFactory.getLogger(RestController.class);
 
     /**
      * Создает новую заметку.

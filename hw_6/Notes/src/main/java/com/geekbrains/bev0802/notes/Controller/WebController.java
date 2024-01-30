@@ -8,7 +8,6 @@ import com.geekbrains.bev0802.notes.servises.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -18,10 +17,10 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 @RequiredArgsConstructor
-public class UserWebController {
+public class WebController {
     private final UserService userService;
     private final NoteService noteService;
-    private final Logger logger = LoggerFactory.getLogger(UserWebController.class);
+    private final Logger logger = LoggerFactory.getLogger(WebController.class);
 
     @GetMapping("/users")
     public String userList(Model model) {
@@ -41,7 +40,7 @@ public class UserWebController {
         return "redirect:/users";
     }
 
-    @GetMapping("/users/{userId}/edit")
+    @GetMapping("/users/{userId}/update")
     public String showUpdateUserForm(@PathVariable Long userId, Model model) {
         User user = userService.findUserById(userId);
         model.addAttribute("user", user);
@@ -49,11 +48,19 @@ public class UserWebController {
     }
 
     @PutMapping("/users/update/{userId}")
-    public String updateUser(@PathVariable Long userId, @ModelAttribute User user) {
-        user.setId(userId); // Установка ID для пользователя
-        userService.saveUser(user); // Обновление пользователя
-        return "redirect:/users"; // Перенаправление на список пользователей
+    public String updateUser(@PathVariable Long userId, @ModelAttribute User updatedUser) {
+        User existingUser = userService.findUserById(userId);
+        if (existingUser != null) {
+            existingUser.setName(updatedUser.getName());
+            existingUser.setPassword(updatedUser.getPassword());
+            userService.saveUser(existingUser);
+            logger.info("Пользователь обновлен: {}", existingUser);
+        } else {
+            logger.error("Пользователь с ID {} не найден", userId);
+        }
+        return "redirect:/users";
     }
+
     @DeleteMapping("/users/{userId}/delete")
     public String deleteUser(@PathVariable Long userId) {
         userService.deleteUser(userId);
@@ -100,9 +107,12 @@ public class UserWebController {
 
     @PutMapping("/users/{userId}/notes/{noteId}/update")
     public String updateNote(@PathVariable Long userId, @PathVariable Long noteId, @ModelAttribute Note note) {
+        logger.info("Обновление заметки с ID: {} для пользователя с ID: {}", noteId, userId);
+        logger.debug("Данные заметки: {}", note);
         note.setUser(userService.findUserById(userId));
         note.setId(noteId);
         noteService.saveNote(note);
+        logger.info("Заметка обновлена: {}", note);
         return "redirect:/users/" + userId + "/notes";
     }
 

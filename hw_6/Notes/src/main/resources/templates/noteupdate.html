@@ -17,22 +17,22 @@
     <h1 class="main-heading">Изменение заметки</h1>
     <form th:action="@{/users/{userId}/notes/{noteId}/update(userId=${user.id}, noteId=${note.id})}" method="post" th:object="${note}" class="editor-form">
         <!-- Скрытый input для указания HTTP метода PUT -->
-        <input type="hidden" name="_method" value="put" />
+        <input type="hidden" name="_method" value="put"/>
 
-        <div class="form-group">
-            <label for="noteTitle">Название заметки</label>
-            <textarea type="text" id="noteTitle" name="title" class="form-control" th:text="${note.title}" placeholder="Изменное название" required></textarea>
-        </div>
+            <div class="form-group">
+                <label for="noteTitle">Название заметки</label>
+                <textarea type="text" id="noteTitle" name="title" class="form-control" th:text="${note.title}" placeholder="Изменное название" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label for="noteContent">Содержимое заметки</label>
-            <textarea id="noteContent" name="content" class="form-control" rows="6" th:text="${note.content}"placeholder="Изменное содержимое" required></textarea>
-        </div>
+            <div class="form-group">
+                <label for="noteContent">Содержимое заметки</label>
+                <textarea id="noteContent" name="content" class="form-control" rows="6" th:text="${note.content}"placeholder="Изменное содержимое" required></textarea>
+            </div>
 
-        <div class="form-group action-buttons">
-            <button type="submit" class="btn btn-primary">Сохранить</button>
-            <a th:href="@{/users/{userId}/notes(userId=${user.id}, noteId=${note.id})}" class="btn btn-secondary">Отменить</a>
-        </div>
+            <div class="form-group action-buttons">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a th:href="@{/users/{userId}/notes(userId=${user.id}, noteId=${note.id})}" class="btn btn-secondary">Отменить</a>
+            </div>
     </form>
 </div>
 <img src="http://localhost:8080/images/note_form.png" alt="Форма добавления заметки">
