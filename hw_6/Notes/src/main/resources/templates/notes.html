@@ -29,13 +29,19 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="note : ${notes}">
-                <td th:text="${note.id}">ID</td>
+            <tr th:each="note, stat : ${notes}">
+                <td th:text="${stat.index + 1}"></td> <!-- Отображение номера строки -->
                 <td th:text="${note.title}">Заголовок заметки</td>
                 <td th:text="${note.content}">Содержимое заметки</td>
                 <td>
-                    <a th:href="@{/notes/edit/{id}(id=${note.id})}" class="button">Изменить</a>
-                    <a th:href="@{/notes/delete/{id}(id=${note.id})}" class="button">Удалить</a>
+                    <div class="button-group">
+                        <a th:href="@{/users/{userId}/notes/{noteId}/update(userId=${user.id}, noteId=${note.id})}" class="button">Изменить</a>
+                        <!-- Форма для удаления заметки -->
+                        <form th:action="@{/users/{userId}/notes/{noteId}/delete(userId=${user.id}, noteId=${note.id})}" method="post" style="display: inline-block;">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button type="submit" class="button">Удалить</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             </tbody>

@@ -21,11 +21,14 @@
                 <label for="userName" class="form-label">Имя</label>
                 <input type="text" class="form-control" id="userName" th:field="*{name}" placeholder="Введите имя">
             </div>
-            <div class="mb-3">
-                <label for="userPassword" class="form-label">Пароль</label>
-                <input type="password" class="form-control" id="userPassword" th:field="*{password}" placeholder="Введите пароль">
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="userPassword" class="form-label">Пароль</label>
+                    <input type="password" class="form-control" id="userPassword" th:field="*{password}" placeholder="Введите пароль">
+                </div>
+                <button type="submit" class="button">Добавить</button>
+                <a th:href="@{/users}" class="button">Отменить</a>
             </div>
-            <button type="submit" class="button">Добавить</button>
         </form>
     </div>
 </div>

@@ -76,5 +76,9 @@ public class NoteService {
     public List<Note> findNotesByUserId(Long userId) {
         return noteRepository.findByUserId(userId);
     }
+
+    public Note getNoteById(Long noteId) {
+        return noteRepository.findById(noteId).orElse(null);
+    }
 }
 

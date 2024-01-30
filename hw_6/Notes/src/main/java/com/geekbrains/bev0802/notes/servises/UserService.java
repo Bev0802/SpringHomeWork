@@ -58,10 +58,15 @@ public class UserService {
     }
 
     /**
-     * Удаляет пользователя по его идентификатору.
+     * Удаляет пользователя из базы данных.
      *
-     * @param id Идентификатор пользователя, которого нужно удалить.
-     */
+     * @param userId Идентификатор пользователя для удаления.     *
+     * */
+    public void deleteUser(Long userId) {
+        userRepository.deleteById(userId);
+    }
+
+
 
 
 

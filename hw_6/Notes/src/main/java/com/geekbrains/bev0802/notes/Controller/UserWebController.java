@@ -40,6 +40,28 @@ public class UserWebController {
         userService.saveUser(user);
         return "redirect:/users";
     }
+
+    @GetMapping("/users/{userId}/edit")
+    public String showUpdateUserForm(@PathVariable Long userId, Model model) {
+        User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
+        return "userupdate";
+    }
+
+    @PutMapping("/users/update/{userId}")
+    public String updateUser(@PathVariable Long userId, @ModelAttribute User user) {
+        user.setId(userId); // Установка ID для пользователя
+        userService.saveUser(user); // Обновление пользователя
+        return "redirect:/users"; // Перенаправление на список пользователей
+    }
+    @DeleteMapping("/users/{userId}/delete")
+    public String deleteUser(@PathVariable Long userId) {
+        userService.deleteUser(userId);
+        return "redirect:/users";
+    }
+
+
+    // Notes
     @GetMapping("/users/{userId}/notes")
     public String showAddFormNotes(@PathVariable Long userId, Model model) {
         List<Note> notes = noteService.findNotesByUserId(userId);
@@ -61,8 +83,33 @@ public class UserWebController {
 
     @PostMapping("/users/{userId}/notes/add")
     public String addNote(@PathVariable Long userId, @ModelAttribute Note note) {
+        note.setUser(userService.findUserById(userId));
         Note savedNote = noteService.saveNote(note);
         return "redirect:/users/" + userId + "/notes";
     }
 
+    @GetMapping("/users/{userId}/notes/{noteId}/update")
+    public String showUpdateNoteForm(@PathVariable Long userId, @PathVariable Long noteId, Model model) {
+        User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
+        Note existingNote = noteService.getNoteById(noteId);
+        model.addAttribute("note", existingNote);
+        return "noteupdate";
+    }
+
+
+    @PutMapping("/users/{userId}/notes/{noteId}/update")
+    public String updateNote(@PathVariable Long userId, @PathVariable Long noteId, @ModelAttribute Note note) {
+        note.setUser(userService.findUserById(userId));
+        note.setId(noteId);
+        noteService.saveNote(note);
+        return "redirect:/users/" + userId + "/notes";
+    }
+
+    @DeleteMapping("/users/{userId}/notes/{noteId}/delete")
+    public String deleteNote(@PathVariable Long userId,
+                             @PathVariable Long noteId) {
+        noteService.deleteNote(noteId);
+        return "redirect:/users/" + userId + "/notes";
+    }
 }

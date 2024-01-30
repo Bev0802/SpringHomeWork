@@ -1,5 +1,6 @@
 package com.geekbrains.bev0802.notes.Controller;
 
+import com.geekbrains.bev0802.notes.Entities.Note;
 import com.geekbrains.bev0802.notes.Entities.User;
 import com.geekbrains.bev0802.notes.servises.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,11 @@ public class NoteWebController {
     public String getNotesByUserId(@PathVariable Long id, Model model) {
         model.addAttribute("notes", noteService.findNotesByUserId(id));
         return "notes"; // имя HTML-шаблона (например, notes.html)
+    }
+
+    @PostMapping("/add/{userId}")
+    public String addNote(@ModelAttribute Note note, @PathVariable Long userId) {
+        noteService.saveNote(note);
+        return "redirect:/notes";
     }
 }
