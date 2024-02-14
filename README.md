@@ -14,3 +14,12 @@
 
 [Урок 7. Spring Security. Работа с JWT. Защита от основных видов атак.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_7)
 
+[Урок 8. Spring AOP, управление транзакциями.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_8)
+
+[Урок 9. Spring Cloud. Микросервисная архитектура.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_9)
+
+[Урок 10. Spring Testing. JUnit и Mockito для написания тестов.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_10)
+
+[Урок 11. Spring Actuator. Настройка мониторинга с Prometheus и Grafana.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_11)
+
+[Урок 12. Паттерны проектирония и GoF паттерны в Spring приложении.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_12)
