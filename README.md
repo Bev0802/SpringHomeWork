@@ -11,3 +11,6 @@
 [Урок 5. Spring Data для работы с базами данных](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_5)
 
 [Урок 6. Проектирование и реализация API для серверного приложения.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_6)
+
+[Урок 7. Spring Security. Работа с JWT. Защита от основных видов атак.](https://github.com/Bev0802/SpringHomeWork/tree/main/hw_7)
+
