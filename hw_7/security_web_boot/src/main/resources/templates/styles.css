@@ -69,3 +69,20 @@ button[type="submit"] {
 btn btn-primary:hover {
     background-color: #1b265d;
 }
+
+.navigation a {
+    padding: 10px 20px;
+    border: 1px solid #45696e;
+    border-radius: 15px;
+    background-color: #274772;
+    color: #a6d1ea;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 10px 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: #1b265d;
+}
