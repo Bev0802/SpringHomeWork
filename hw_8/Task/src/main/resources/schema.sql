@@ -1,12 +1,11 @@
-CREATE TABLE tasks (
+CREATE TABLE users (
                       id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                      description VARCHAR(255) NOT NULL,
-                      status VARCHAR(20) NOT NULL,
-                      creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                      name VARCHAR(255) NOT NULL,
+                      age INTEGER,
+                      email VARCHAR(255)
 );
 
-INSERT INTO tasks (description, status) VALUES ('Купить продукты', 'NOT_STARTED');
-INSERT INTO tasks (description, status) VALUES ('Позвонить другу', 'IN_PROGRESS');
-INSERT INTO tasks (description, status) VALUES ('Подготовить отчет', 'COMPLETED');
-INSERT INTO tasks (description, status) VALUES ('Сходить в магазин', 'NOT_STARTED');
-INSERT INTO tasks (description, status) VALUES ('Помыть посуду', 'IN_PROGRESS');
+INSERT INTO users (name, age, email) VALUES ('Tom', '20', '9wI8j@example.com');
+INSERT INTO users (name, age, email) VALUES ('Jerry', '5', '9wI8j@example.com');
+INSERT INTO users (name, age, email) VALUES ('Alice', '16', '9wI8j@example.com');
+INSERT INTO users (name, age, email) VALUES ('Bob', '50', '9wI8j@example.com');
